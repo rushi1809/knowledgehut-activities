@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration_Form</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <table>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" name="Uname"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="Passwd"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><textarea name="Address"></textarea></td>
+            </tr>
+            <tr>
+                <td>Dob</td>
+                <td><input type="date" name="DOB"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><input type="radio" name="M" value="M">Male
+                <input type="radio" name="F" value="F">Female</td>
+            </tr>
+            <tr>
+                <td>Courses</td>
+                <td><input type="checkbox" name="HTML" value="HTML">HTML
+                <input type="checkbox" name="CSS" value="Css">CSS
+                <input type="checkbox" name="Java" value="Java">Java</td>
+            </tr>
+            <tr>
+                <td>Qualification</td>
+                <td><select name="Qualification">
+                    <optgroup label="Bachelor's">
+                      <option value="B.tech">B.E/B.tech</option>
+                      <option value="B.sc">B.sc</option>
+                      <option value="Bcs">Bcs</option>      
+                    </optgroup>   
+                    <optgroup label="Master's">
+                        <option value="M.tech">M.E/M.tech</option>
+                        <option value="M.sc">M.sc</option>
+                        <option value="MCS">MCS</option>
+                    </optgroup>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Upload Image</td>
+                <td><input type="File" name="Image"></td>
+            </tr>
+            <tr>
+                <td><input type="Submit" value="Signup"></td>
+                <td><input type="reset" value="Reset"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
