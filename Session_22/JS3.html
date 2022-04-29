@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+</head>
+<body>
+    <form action="js2-Sub.html" method="post" onsubmit="return validation()">
+    <table>
+        <tbody>
+            <tr>
+                <td><label for="Fn">First Name</label></td>
+                  <td><input type="text" name="Fname" id="Fn" autocomplete="off"></td>  
+                    <td><span style="color: red;" id="sp1"></span></td>
+            </tr>
+            <tr>
+                <td><label for="Ln">Lastname</label></td>
+                <td><input type="text" name="Lname" id="Ln" autocomplete="off"></td>
+                <td><span style="color: red;" id="sp2"></span></td>
+            </tr>
+            <tr>
+                <td><label for="Pw">Password</label></td>
+                   <td><input type="password" name="Pwd" id="Pw" autocomplete="off"></td> 
+                    <td><span style="color: red;" id="sp3"></span></td>
+            </tr>
+            <tr>
+                <td><label for="Cp">confirm Password</label>
+                    <td><input type="password" name="CPwd" id="Cp" autocomplete="of"f></td>
+                    <td><span style="color: red;" id="sp4"></span></td>
+            </tr>
+            <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+            <tr>
+                <td></td>
+                <td><button type="submit" value="submit">submit</button></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+    
+    <script type="text/javascript">
+        
+        function validation()
+        {
+            var ele1 = document.getElementById('sp1');
+            var ele2 = document.getElementById('sp2');
+            var ele3 = document.getElementById('sp3');
+            var ele4 = document.getElementById('sp4');
+            var input1 = document.getElementById('Fn').value;
+            var input2 = document.getElementById('Ln').value;
+            var input3 = document.getElementById('Pw').value;
+            var input4 = document.getElementById('Cp').value;
+
+            if(input1.length<=2)
+            {
+                ele1.innerHTML = "enter at least 2 char";
+                return false;
+            }
+           
+            if(input2.length<=2)
+            {
+                ele2.innerHTML = "enter at least 2 char";
+                return false;
+            }
+           
+            if(input3.length<=2)
+            {
+                ele3.innerHTML = "enter at least 2 char Passwd";
+                return false;
+            }
+
+            if(input4.length<=2)
+            {
+                ele4.innerHTML = "confirm the passwd plz";
+                return false;
+            }
+           
+            if(input3 != input4)
+            {
+                ele4.innerHTML = "Passwd dosent match";
+                return false;
+            }
+           
+            return true;
+      }
+    </script>
+</body>
+</html>
