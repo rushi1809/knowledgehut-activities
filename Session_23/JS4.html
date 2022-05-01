@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+     <tbody>
+        <tr>
+            <td><label for="N1">N1</label></td>
+            <td><input type="text" id="N1" onkeydown="return val(event)"><span style="color: red;" id="sp1"></span></td>
+        </tr>
+        <tr>
+            <td><label for="N2">N2</label></td>
+            <td><input type="text" id="N2" onkeydown="return val1(event)"><span style="color: red;" id="sp2"></span></td>
+        </tr>
+        <tr>
+            <td><label for="R">R</label></td>
+            <td><input type="text" id="R" disabled></td>
+        </tr>
+    </tbody>     
+    </table>
+    <button type="button" onclick="add()" id="add">Add</button>
+    <button type="button" onclick="Sub()" id="sub">Sub</button>
+    <button type="button" onclick="Mul()" id="mul">Mul</button>
+    <button type="button" onclick="Div()" id="div">Div</button>
+
+    <script type="text/javascript">
+        var ele1 = document.getElementById('sp1');
+        var ele2 = document.getElementById('sp2');
+        var counter1=0;
+        var counter =0;
+        var exp1 = /[0-9|.]/;
+        var exp = /[0-9|.]/;
+        function val(e)
+        {
+            
+            //console.log(e);
+            let value = e.key;
+            console.log(value);
+            let flag = exp.test(value);
+            if(flag)
+            {
+                ele1.innerHTML='';
+            }
+            else
+            {
+               ele1.innerHTML = "Only Digists plz"
+            }
+            if(e.keyCode == 190 && counter<1)
+            {
+                counter++;
+                exp = /[0-9]/;
+                console.log("inside if one"+counter);
+            }
+           if(e.keyCode==8)
+           {
+              let value=String(e.target.value);
+              if(value.substr(value.length - 1)==".")
+               {
+                counter=0;
+                exp = /[0-9|.]/;
+               }
+                ele1.innerHTML='';
+                return true;
+                
+           }
+           if(e.keyCode==37 || e.keyCode==38 ||e.keyCode==39 ||e.keyCode==40)
+           {
+                ele1.innerHTML='';
+                return true;
+           }
+           return flag;
+        }
+
+        function val1(e1)
+        {
+            let value1 = e1.key;
+            console.log(value1);
+            let flag1 = exp1.test(value1);
+            if(flag1)
+            {
+                ele2.innerHTML='';
+            }
+            else
+            {
+               ele2.innerHTML = "Only Digists plz" 
+            }
+            if(e1.keyCode == 190 && counter1<1)
+            {
+                counter1++;
+                exp1 = /[0-9]/;
+            }
+            if(e1.keyCode==8)
+            {
+               let value=String(e1.target.value);
+               if(value.substr(value.length - 1)==".")
+               {
+                  counter1=0;
+                  exp1 = /[0-9|.]/;
+               }
+                ele2.innerHTML='';
+                return true;
+            }
+           if(e1.keyCode==37 || e1.keyCode==38 ||e1.keyCode==39 ||e1.keyCode==40)
+           {
+                ele2.innerHTML='';
+                return true;
+           }
+           return flag1;
+        }
+        function add()
+        {
+            let num1 = document.getElementById('N1').value;
+            num1 = parseFloat(num1);
+            let num2 = document.getElementById('N2').value;
+            num2 = parseFloat(num2);
+            let Re = document.getElementById('R');
+            let num3;
+            num3 = num1 + num2;
+            Re.value = "Addition is ="+num3;
+            console.log(num3);
+        }
+        function Sub()
+        {
+            let num1 = document.getElementById('N1').value;
+            num1 = parseFloat(num1);
+            let num2 = document.getElementById('N2').value;
+            num2 = parseFloat(num2);
+            let Re = document.getElementById('R');
+            let num3;
+            num3 = num1 - num2;
+            Re.value = "Substraction is ="+num3;
+            console.log(num3);
+        }
+        function Mul()
+        {
+            let num1 = document.getElementById('N1').value;
+            num1 = parseFloat(num1);
+            let num2 = document.getElementById('N2').value;
+            num2 = parseFloat(num2);
+            let Re = document.getElementById('R');
+            let num3;
+            num3 = num1 * num2;
+            Re.value = "Multiplication is ="+num3;
+            console.log(num3);
+        }
+        function Div()
+        {
+            let num1 = document.getElementById('N1').value;
+            num1 = parseFloat(num1);
+            let num2 = document.getElementById('N2').value;
+            num2 = parseFloat(num2);
+            let Re = document.getElementById('R');
+            let num3;
+            num3 = num1 / num2;
+            Re.value = "Division is ="+num3;
+            console.log(num3);
+        }
+    </script>
+
+</body>
+</html>
