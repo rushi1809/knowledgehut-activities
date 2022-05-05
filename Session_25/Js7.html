@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+            var random = Math.random();
+            console.log(random);
+            random = random * 1000000;
+            random = parseInt(random);
+            if(random>99999)
+            {
+                document.write("<h4> OTP="+random+"</h4></br>");
+            }
+            else 
+            {
+                let x = String(random);
+                x=x.padStart(6,'0');
+                document.write("<h4> OTP="+x+"</h4></br>");
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        class user
+        {
+            constructor(uname,contact)
+            {
+                this.uname = uname;
+                this.contact = contact;
+            }
+            display()
+            {
+                document.write("Name:"+this.uname+"</br>Phone-No:"+this.contact?.phn+"</br>Email:"+this.contact?.email+"</br><hr>");
+            }
+        }
+        let e1 = new user('rushi',{phn:9511972449,email:'rushi1809@gmail.com'});
+        let e2 = new user('Devika',{phn:8007985064});
+        let e3 = new user('pallavi');
+        let e4 = new user();
+        let UArray = [];
+        UArray.push(e1);
+        UArray.push(e2);
+        UArray.push(e3);
+        UArray.push(e4);
+        UArray.forEach((v,i) => {v.display(); });
+    </script>
+</body>
+</html>
