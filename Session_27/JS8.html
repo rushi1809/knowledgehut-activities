@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chess Board</h1>
+    <canvas id="c1" width="400" height="400" style="border: solid 2px black;"></canvas>
+    <script type="text/javascript">
+        let ele = document.getElementById('c1');
+        let ctx = ele.getContext('2d');
+        for(let i=0;i<8;i++)
+        {
+            for( let j=0;j<8;j++)
+            {
+                if(i%2==0 || i==0)
+                {
+                    if(j%2==0 || j==0)
+                    {
+                        ctx.fillStyle = '#EDC9AF';
+                        ctx.fillRect(j*50,i*50,50,50);
+                    }
+                    else
+                    {
+                        ctx.fillStyle = '#832A0D';
+                        ctx.fillRect(j*50,i*50,50,50);
+                    }
+                }
+                else
+                {
+                    if(j%2==0 || j==0)
+                    {
+                        ctx.fillStyle = '#832A0D';
+                        ctx.fillRect(j*50,i*50,50,50);
+                    }
+                    else
+                    {
+                        ctx.fillStyle = '#EDC9AF';
+                        ctx.fillRect(j*50,i*50,50,50);
+                    }
+                }
+
+               
+            }
+        }
+    </script>
+</body>
+</html>
