@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" onsubmit="Itemlist()">
+        <label for="ip1">Enter Prodcut</label>
+        <input type="text" id="ip1" autocomplete="off" required>
+        <button type="submit"> Enter</button>
+    </form>
+    <div id="div1">Selected Items:</div>
+    <script type="text/javascript">
+        let s = new Set();
+        let ele1 = document.getElementById('div1');     
+        function Itemlist()
+        {
+            let ipv = document.getElementById('ip1');
+            let ipv1 = ipv.value.toLowerCase();
+            let list ="<ol>";
+            let flag =0;
+                s.forEach((v,i) => {
+                    if(ipv1==v)
+                    {
+                        flag=1;
+                    } });
+
+                if(flag==1)
+                    alert("Product already exist");
+                else
+                    s.add(ipv1);        
+            s.forEach((v) => {
+                list = list + "<li>"+v+"</li>";
+            });
+            ele1.innerHTML = "Selected Items:"+list+"</ol>";
+            ipv.value = "";
+        }
+
+    </script>
+</body>
+</html>
