@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        function fullName(uname)
+        {
+            return uname.firstname+''+uname.lastname;
+        }
+        function Hello(){
+            let person = {firstname:'Rushikesh',lastname:'rathod'};
+            let url = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/1200px-Cat_November_2010-1a.jpg";
+            return(<div>
+                <img src ={url} width="200" height="200"/>
+                Hello{fullName(person)}
+                </div>);
+        }
+        function Rootcontent(){
+            return(<div>
+                <Hello/>
+                </div>);
+        }
+        ReactDOM.render(<Rootcontent/>,document.getElementById('root'));
+    </script>
+</body>
+</html>
